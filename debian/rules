@@ -3,4 +3,7 @@
 %:
 	dh $@
 
+override_dh_installdirs:
+	dh_installdirs /usr/share/games/typhoon-2001
+
 override_dh_install:
