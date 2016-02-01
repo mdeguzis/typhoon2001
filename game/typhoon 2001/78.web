@@ -1,0 +1,34 @@
+[info]
+name = tinystar
+author = kufi
+
+[start]
+x = -1.250000
+y = 0.000000
+
+[flags]
+closed = 1
+control_inverted = 0
+
+[enemies]
+c = 30
+d = 48
+
+[color]
+r1 = 1.000000
+g1 = 0.000000
+b1 = 0.050000
+r2 = 0.500000
+g2 = 0.000000
+b2 = 0.000000
+
+[web]
+p0 = 345
+p1 = 285
+p2 = 75
+p3 = 15
+p4 = 165
+p5 = 105
+p6 = 255
+p7 = 195
+p8 = -9999

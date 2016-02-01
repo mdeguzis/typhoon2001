@@ -1,0 +1,147 @@
+.TH "ice-steamos" 6 "Ice-SteamOS Man Page" "Version 1.0.0"
+.SH NAME
+ice-steamos \- Utility to add ROMs to Steam BPM and make launching them much easier. 
+.SH SYNOPSIS
+If you only have one computer, switch to a new terminal server with "CTRL+ALT+F#". The SteamOS compositor
+runs under TTY7 (CTRL+ALT+F7).
+
+.B RUNNING ON STEAMOS
+
+sudo systemctl stop lightdm
+.br
+su - steam
+.br
+ice-steamos [option]
+.br
+exit
+.br 
+sudo systemctl start lightdm
+.PP
+.
+.B RUNNING ON DEBIAN DISTROS
+
+ice-steamos [option]
+.SH DESCRIPTION
+.B ice-steamos 
+is a fork of the original upstream "Ice" program by Scott Rice.
+.PP
+Use Steam to play all your old games! Just because old consoles aren't sold anymore doesn't 
+mean you can't enjoy their games. ice-steamos leverages Steam's Big Picture mode to turn it into an 
+emulator frontend (similar to Hyperspin). It accomplishes this by creating folders in 
+specified locations on the user's hard drive, then adding any ROMs that are placed in these 
+folders to Steam as non-Steam games.
+.PP
+The goal of this fork is to fix up Ice and tailor it for use on SteamOS. 
+Debian packaging is in use to automate installation over using pip/python commands. 
+pysteam, psutil, pysteam, and pastebin python packages were converted into Debian packages, 
+which requires adding the SteamOS-Tools repository, noted below. ice-steamos follows the 
+latest "stable" release (either upstream or deemed stable by us), and ice-steamos-unstable, 
+which follows the latest upstream commits.
+.SH NOTES
+Steam must be closed before running ice-steamos. The reason this check exists is because 
+Steam writes its shortcuts.vdf file on close, so if Ice is run while Steam is open when 
+Steam closes (which will need to happen to view shortcuts) it will overwrite anything you did.
+.SH OPTIONS
+.IP "pdebug"
+.br
+Pastes debug logs to pastebin to include with bug reports
+.IP "-s --skip-steam-check"
+Skips checking whether Steam is running (not a good idea).
+.IP "-c --config"
+Specify a config file.
+.IP "-C --consoles"
+Specify a specific consoles.txt file.
+.IP "-e --emulators"
+Specify a specific emulators.txt file.
+.IP "-d --dry-run"
+Only test running ice-steamos.
+.SH EMULATORS
+This fork makes use of as many libretro cores as we can, so that gamepad input 
+(by way of retroarch-joypad-autoconfig) is handled automatically, taking out the need for manual configurations on our part, and the user. However, emulators, such as Dolphin, will need setup as the steam user (or migrated after setup with the desktop user) in Desktop Mode. Making non-libretro cores easier to configure is something that will be looked into. See "depends" lines of  [debian/control](https://github.com/ProfessorKaos64/SteamOS-Tools-Packaging/tree/brewmaster/ice/debian/control) for a list of emulators in use.
+.SH FILES
+.B "/etc/ice/config.txt"
+.br
+The configuration file for ice-steamos itself
+
+.B "/etc/ice/emulators.txt
+.br
+The configuration file which defines available emulators
+
+.B "/etc/ice/consoles.txt"
+.br
+The configuration file which defines the system/consoles in use, and what emulators they employ.
+
+.B "/usr/games/ice-steamos"
+.br
+The script launcher for launching ice-steamos.
+.SH ADDING ROMS
+When running Ice for the first time the directory `/home/steam/ROMs` will be created containing 
+directories for all supported emulators. The easiest way to add ROMs to this directory is with 
+rsync or scp. These pieces of software allow you to transfer files over ssh. To be able to use 
+ssh as the steam user, you will need to set a password this can be done from the commandline 
+as the desktop user with:
+.PP
+.B sudo passwd steam
+.PP
+Once you've done that you can connect to it with winscp with steam as username and with your new password.
+If you're on Mac or Linux you can transfer and the content of your local roms directory like this:
+.PP
+.B rsync -ave ssh romsdir/NES/ steam@steamos:ROMs/NES/
+.PP
+Or you could use scp for single files:
+.PP
+.B scp rom.z64 steam@steamos:ROMs/N64/
+.PP
+In both cases replace steamos with your Steam Machine's IP address and the rom/romdir with what you want 
+to transfer. scp can also handle folders with it's "-r" option in the same way the "cp" command does.
+Once you've done this you can run Ice again to add the ROMs to Steam.
+.SH REMOVING ROMs / CATEGORIES ADDED TO STEAMOS
+Simply remove / relocate the ROM/folder and run Ice again. If there are no games in a given folder, 
+the category will be removed.
+.SH SEE ALSO
+.B UPSTREAM CODE REPOSITORY
+.br
+https://github.com/scottrice
+.SH BUGS
+.I _______________________________________________________________________
+.br
+.B "(1) Error: config grid write access failure"
+.br
+.I _______________________________________________________________________
+
+* Ice requires write access too `/home/steam/.local/share/Steam/userdata/21885827/config/grid` to run.
+Please resolve these issues and try running Ice again.
+
+.PP
+.I Resolution:
+
+Close the window, or hit enter to exit...
+Re-run ice-steamos once more. For some reason, the first time you run ice, this may show up as a false positive.
+This is being looked into.
+
+.I _______________________________________________________________________
+.br
+.B "(2) Error: another process, such as 'steamwebhelper' is still open, preventing Ice from running"
+.br
+.I _______________________________________________________________________
+
+`steamwebhelper` cannot be running while Ice is being run. Please resolve these issues and try running Ice again.
+Close the window, or hit enter to exit..
+
+.PP
+.I Resolution:
+
+Switch back to the desktop user by typing "exit," and run 'sudo pkill steamwebhelper'". 'Try running ice-steamos' as the 
+steam user again. This is the only current reported issue of a process still running after closing lightdm. The bug seems
+to present itself only when running ice-steamos on another TTY line, not over SSH.
+
+.SH AUTHORS
+.B SteamOS version: 
+.br 
+ProfessorKaos64, mdeguzis@gmail.com
+.br
+Sharkwouter, https://github.com/sharkwouter
+
+.B Original source code
+.br
+Scott Rice, https://github.com/scottrice/Ice

@@ -1,0 +1,121 @@
+#
+# Specifies the consoles for Ice to manage. Each console will have a ROMs folder
+# created for it, and can have their games added to Steam.
+#
+# To add a new console, make a new entry following this format:
+#
+# [*Console Name*]
+# option=value
+#
+# The *Console Name* is used as the Steam category for your Console. The options
+# are extra information for Ice to use about the console. The only one that is
+# necessary is 'emulator'. A full list of available options are as follows:
+#
+# Emulator: The emulator used to launch these games. This should be the name of
+#   an entry in emulators.txt.
+#
+# Nickname: *optional* A short, distinct name for the console. Used as the
+#   folder name for the default ROMs directory. If none is given, the full name
+#   of the console is used. This is not recommended, as ConsoleGrid uses
+#   the nickname as a hint to which console it should search for games in.
+#
+# Extensions: *optional* A (comma separated) list of file extensions to assume
+#   are ROMs. For example, if the value was set to 'sfc, smc' then only files
+#   that ended with '.sfc' or '.smc' will be added to Steam. If not provided,
+#   Ice will add every file in the ROMs directory to Steam.
+#
+# ROMs Directory: *optional* If given a path, Ice will look in the specified
+#   directory for ROMs (instead of the one it generates).
+#
+# Prefix: *optional* Text to append to the name of every game for the console.
+#   The name of the game as it appears in Steam will be 
+#   "*Prefix* *ROM filename*". This is useful if you want to organize your Steam
+#   library in a way other than categories (for example, using the prefix
+#   '[NES]', or 'NES -')
+#
+# Icon: *optional* A path to an icon file to display for every game in the
+#   console. If none is provided, the icon of the emulator is used.
+#
+# Images Directory: *optional* A path to a directory to search for Grid Images.
+#   If an image is found in this directory with the same name as the ROM, it is
+#   set as the Steam Grid Image instead of one downloaded from ConsoleGrid.
+#
+# For example, a possible configuration (using all options) might look like this:
+#
+# [Super Nintendo]
+# nickname=SNES
+# emulator=ZSNES
+# extensions=sfc, smc
+# roms directory=C:\Games\Super Nintendo\ROMs
+# prefix=[SNES]
+# icon=C:\Games\Super Nintendo\icon.png
+# images directory=C:\Games\Super Nintendo\Images
+#
+
+[4DO]
+nickname=4DO
+emulator=RetroArch_4DO
+
+[Atari 2600]
+nickname=Atari_2600
+emulator=RetroArch_Atari_2600
+
+[MAME]
+nickname=MAME
+emulator=RetroArch_MAME
+
+[Nintendo 64]
+nickname=N64
+emulator=RetroArch_N64
+
+[Nintendo DS]
+nickname=DS
+emulator=RetroArch_DS
+
+[Nintendo Entertainment System]
+nickname=NES
+emulator=RetroArch_NES
+
+[Nintendo Gameboy]
+nickname=Gameboy
+emulator=RetroArch_GB
+
+[Nintendo Gameboy Advance]
+nickname=GBA
+emulator=RetroArch_GB
+
+[Nintendo Gamecube]
+nickname=Gamecube
+emulator=Dolphin
+
+[Nintendo Wii]
+nickname=Wii
+emulator=Dolphin
+
+[Playstation 1]
+nickname=PS1
+emulator=RetroArch_PS1
+
+#[Playstation 2]
+#nickname=PS2
+#emulator=PCSX2
+
+[Playstation Portable]
+nickname=PSP
+emulator=RetroArch_PSP
+
+[Sega Genesis]
+nickname=Genesis
+emulator=RetroArch_Genesis
+
+[Super Nintendo]
+nickname=SNES
+emulator=RetroArch_SNES
+
+[VirtualBoy]
+nickname=VirtualBoy
+emulator=RetroArch_VB
+
+[WonderSwan]
+nickname=WonderSwan
+emulator=RetroArch_WSWAN

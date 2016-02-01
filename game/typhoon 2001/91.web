@@ -1,0 +1,26 @@
+[info]
+name = pixel
+author = kufi
+
+[start]
+x = -0.500000
+y = -0.500000
+
+[flags]
+closed = 1
+control_inverted = 0
+
+[color]
+r1 = 0.000000
+g1 = 0.000000
+b1 = 1.000000
+r2 = 0.000000
+g2 = 1.000000
+b2 = 0.000000
+
+[web]
+p0 = 0
+p1 = 90
+p2 = 180
+p3 = 270
+p4 = -9999
