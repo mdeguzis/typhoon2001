@@ -1,8 +1,9 @@
 # Typoon 2001
 
-WIP
+Effort to preserve for use on SteamOS/Debain. Typhoon 2001 is a Tempest 2000 clone. This snapshot is from, what I assume per the original tarball [here](http://www.sourcefiles.org/Games/Arcade/typhoon_2001_r3992.tar.gz) revision r3992.
 
-Attempt to resurrect the Tempest 2001 clone (at revision r3992), Typhoon 2001, for use on SteamOS/Debain
+**Notice**:  
+The game is a static binary, so there is no current way I have to correct any issues. Please _do not_ submit issues agains this project of this nature.
 
 # Legacy info
 Typhoon 2001 for Linux
