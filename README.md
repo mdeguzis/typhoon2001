@@ -2,7 +2,7 @@
 
 WIP
 
-Attempt to resurrect the Tempest 2001 clone, Typhoon 2001, for use on SteamOS/Debain
+Attempt to resurrect the Tempest 2001 clone (at revision r3992), Typhoon 2001, for use on SteamOS/Debain
 
 # Legacy info
 Typhoon 2001 for Linux
