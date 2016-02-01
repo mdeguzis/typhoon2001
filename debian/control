@@ -10,6 +10,10 @@ Vcs-Browser: https://github.com/ProfessorKaos64/typhoon-2001
 
 Package: typhoon2001
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
+ libglu1-mesa:i386,
+ libxpm4:i386,
+ osspd:i386,
+ libxcursor1:i386
 Description: Typhoon 2001 is a clone of the game "Tempest 2001"
  This package is targeted at SteamOS.
