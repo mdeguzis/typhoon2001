@@ -21,6 +21,7 @@ The full documentation is available on the website (deprecated, [wayback machine
 # Controls
 ---------
 
+```
 Cursor Left:   Move left
 Cursor Right:  Move right
 Space:         Fire
@@ -37,4 +38,4 @@ F4:            Turn off camera movement
 F5:            Web based camera rotation
 F6:            Center based camera rotation
 F8:            Turn off camera rotation
-
+```
