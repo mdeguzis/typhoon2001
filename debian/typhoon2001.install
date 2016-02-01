@@ -1,2 +1,5 @@
-* /usr/share/games/typhoon-2001
-typhoon2001-launch /usr/games/typhoon
+game /usr/share/games/typhoon-2001
+tempest*  /usr/share/games/typhoon-2001
+typhoon* /usr/share/games/typhoon-2001
+tp.dat /usr/share/games/typhoon-2001
+typhoon2001 /usr/games/typhoon
