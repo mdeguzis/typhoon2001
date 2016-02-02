@@ -4,3 +4,4 @@ typhoon* /usr/share/games/typhoon-2001/
 tp.dat /usr/share/games/typhoon-2001/
 typhoon2001 /usr/games/
 typhoon2001.png /usr/share/pixmaps/
+debian/typhoon2001.desktop /usr/share/applications/
