@@ -22,24 +22,22 @@ The full documentation is available on the website (deprecated, [wayback machine
 
   http://typhoon.kuto.de 
 
-# Controls
----------
+# Controls 
 
-```
-Cursor Left:   Move left
-Cursor Right:  Move right
-Space:         Fire
-Tab:           Jump (only available if jump powerup has been collected)
-Enter:         Superzapper (only once per level)
-PageUp:        Zoom in
-PageDown:      Zoom out
-Esc:           Exit
-P:             Pause
+|Keyboard       |Suggested gamepad button to set|               Action                 |
+|---------------|-------------------------------|--------------------------------------|
+|Cursor Left|     Left joystick                 |    Move left
+|Cursor Right|    Right Joystick                |    Move right
+|Space|           A button                      |    Fire / OK (in menus)
+|Tab|             B button                      |    Jump (if available)
+|Enter|           X button                      |    Superzapper (only once per level)
+|PageUp|          n/a                           |    Zoom in
+|PageDown|        n/a                           |    Zoom out
+|Esc|             Back button                   |    Exit (labled start in menu)
+|P|               Start button                  |    Pause 
+|F1|              n/a                           |    Turn on camera movement
+|F4|              n/a                           |    Turn off camera movement
+|F5|              n/a                           |    Web based camera rotation
+|F6|              n/a                           |    Center based camera rotation
+|F8:|             n/a                           |    Turn off camera rotation
 
-F1:            Turn on camera movement
-F4:            Turn off camera movement
-
-F5:            Web based camera rotation
-F6:            Center based camera rotation
-F8:            Turn off camera rotation
-```
