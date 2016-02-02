@@ -1,1 +1,12 @@
+typhoon2001 (1.0.0+bsos1-1) brewmaster; urgency=low
+
+  * Statically linked build of Typhoon 2001
+  * All credit goes to original author, Thorsten Kuphaldt
+  * Original website: http://typhoon.kuto.de
+  * Wayback machine archive: http://web.archive.org/web/20110511052002/http://typhoon.kuto.de/
+  * See: packages.libregeek.org
+  * Upstream authors and source: https://github.com/ProfessorKaos64/typhoon2001
+
+ -- SteamOS-Tools Signing Key <mdeguzis@gmail.com>  Mon, 01 Feb 2016 19:27:19 -0500
+
 
