@@ -1,3 +1,11 @@
+typhoon2001 (1.0.0+bsos2-1) brewmaster; urgency=low
+
+  * Add desktop file and image for Steam BPM
+  * See: packages.libregeek.org
+  * Upstream authors and source: https://github.com/ProfessorKaos64/typhoon2001
+
+ -- SteamOS-Tools Signing Key <mdeguzis@gmail.com>  Mon, 01 Feb 2016 19:33:30 -0500
+
 typhoon2001 (1.0.0+bsos1-1) brewmaster; urgency=low
 
   * Statically linked build of Typhoon 2001
