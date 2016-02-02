@@ -33,8 +33,8 @@ The full documentation is available on the website (deprecated, [wayback machine
 |Enter|           X button                      |    Superzapper (only once per level)
 |PageUp|          n/a                           |    Zoom in
 |PageDown|        n/a                           |    Zoom out
-|Esc|             Back button                   |    Exit (labled start in menu)
-|P|               Start button                  |    Pause 
+|Esc|             Start button                  |    Exit (Exits while in main title screen)
+|P|               Start button                  |    Pause (gamepad pauses in-game)
 |F1|              n/a                           |    Turn on camera movement
 |F4|              n/a                           |    Turn off camera movement
 |F5|              n/a                           |    Web based camera rotation
